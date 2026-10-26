@@ -109,15 +109,11 @@ class LoginHandler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    server = HTTPServer(("127.0.0.1", 8000), LoginHandler)
+    import os
 
-    print("Green Access server is running.")
-    print("Open http://127.0.0.1:8000 in your browser.")
-    print("Press Ctrl+C to stop the server.")
+    port = int(os.environ.get("PORT", 8000))
+    server = HTTPServer(("0.0.0.0", port), LoginHandler)
+    
+    print(f"Green Access server running on port {port}")
+    server.serve_forever()
 
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        print("\nServer stopped.")
-    finally:
-        server.server_close()
