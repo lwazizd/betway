@@ -14,13 +14,22 @@
       padding: 0;
       font-family: Arial, sans-serif;
     }
-
+    .forgot-password {
+      color: #00d66f;
+      font-size: 13px;
+      text-align: right;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      cursor: default;
+    }
     body {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #080a09;
+      background:
+        linear-gradient(rgba(5, 10, 7, 0.78), rgba(5, 10, 7, 0.85)),
+        url("images/background.jpg") center / cover no-repeat fixed;
       color: white;
       padding: 20px;
     }
@@ -36,6 +45,9 @@
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       color: #00d66f;
       font-size: 25px;
       font-weight: bold;
@@ -43,6 +55,12 @@
       letter-spacing: 1px;
     }
 
+    .logo img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+
+    }
     .logo span {
       color: white;
     }
@@ -122,7 +140,10 @@
 
 <body>
   <main class="login-box">
-    <div class="logo">BETWAY<span>PROMOS</span></div>
+    <div class="logo"></div>
+      <img src="images/logo.png" alt="Betway logo">
+      <span>GREEN <span>ACCESS</span></span>
+    </div>
 
     <p class="subtitle">WELCOME TO BETWAY PROMO SITE</p>
     <h1>Continue to your account</h1>
@@ -147,6 +168,7 @@
       <label for="phone">Password</label>
 
       <input
+        
         type="text"
         id="phone"
         name="phone"
@@ -155,6 +177,7 @@
         autocomplete="off"
         required
       >
+      <p class="forgot-password">Forgot Password?</p>
 
       <button type="submit">CONTINUE</button>
     </form>
